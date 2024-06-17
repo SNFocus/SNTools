@@ -1,0 +1,60 @@
+{
+  "name": "sntools",
+  "version": "0.0.0",
+  "private": true,
+  "bin": {
+    "sn": "./dist/main.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:cov": "jest --coverage --reporters=summary",
+    "cov:inc": "sn inc-cov -cf ./coverage/cov.json -tb origin/main -o ./coverage",
+    "test:inc": "jest --coverage --json --outputFile=./coverage/cov.json && npm run cov:inc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^11.1.0",
+    "figlet": "^1.7.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.23",
+    "istanbul-lib-coverage": "^3.2.2",
+    "istanbul-lib-report": "^3.0.1",
+    "istanbul-reports": "^3.1.7",
+    "shelljs": "^0.8.5",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.21.1",
+    "@types/commander": "^2.12.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/istanbul-lib-coverage": "^2.0.6",
+    "@types/istanbul-lib-report": "^3.0.3",
+    "@types/istanbul-reports": "^3.0.4",
+    "@types/jest": "^29.5.12",
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.12.5",
+    "@types/shelljs": "^0.8.15",
+    "@vue/compiler-sfc": "^3.3.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.6",
+    "npm-run-all2": "^6.1.2",
+    "prettier": "^3.2.5",
+    "rollup": "^4.18.0",
+    "simple-git-hooks": "^2.11.1",
+    "ts-jest": "^29.1.4",
+    "typescript": "~5.4.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
