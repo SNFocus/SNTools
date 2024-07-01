@@ -14,6 +14,7 @@ build
 dist-ssr
 coverage
 *.local
+lib/main.ts
 
 /cypress/videos/
 /cypress/screenshots/

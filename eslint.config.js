@@ -1,8 +1,11 @@
-const antfu = require('@antfu/eslint-config').default
+const antfu = require('@antfu/eslint-config').default;
 
 module.exports = antfu({
   rules: {
-    'n/prefer-global/process': ['error', 'never'],
-    'no-array-constructor': ['error', 'never'],
+    'no-debugger': 'error',
+    'style/semi': 'off',
+    'style/member-delimiter-style': 'off',
+    'style/arrow-parens': ['warn', 'as-needed'],
+    'no-console': 'off',
   },
-})
+});
